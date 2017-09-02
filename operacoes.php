@@ -36,6 +36,17 @@
 	</nav>
 	
 	
+	<div class="container">
+	<div class="row">
+		<h1>Histórico de Operações</h1>
+		<div>
+			<p class="col-xs-2">id</p><p class="col-xs-offset-6 col-xs-2">Data:</p><p class="col-xs-2">Hora:</p>
+			<p class="col-xs-8">Cod - Mercadoria</p><p class="col-xs-2">Quantidade</p>
+			<p class="col-xs-8">Descrição:</p><p class="col-xs-2">Valor:</p>
+		</div>
+	</div>
+	</div>
+	
 	
 	
 	
