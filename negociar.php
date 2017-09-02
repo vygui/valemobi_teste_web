@@ -35,11 +35,63 @@
 		</div>
 	</nav>
 	
-	<div class="container videos">
-		<div class="row">
-			<h1>Negociar</h1>
+	<div class="container">
+	<div class="row">
+		<h1>Negociar</h1>
+		<form name="negociar" action="#" method="#">
+			<fieldset class="col-xs-12">
+				<div class="form-group">
+					<label>Tipo de Operação:</label>
+					<select class="form-control">
+						<option value="1">Compra</option>
+						<option value="2">Venda</option>
+					</select>
+				</div>
+			</fieldset>
 			
-		</div>
+			
+			<fieldset class="col-md-2">
+				<div class="form-group">
+					<label>Código:</label>
+					<input class="form-control" type="text">
+				</div>
+			</fieldset>
+			<fieldset class="col-md-10">
+				<div class="form-group">
+					<label>Nome:</label>
+					<input class="form-control" type="text">
+				</div>
+			</fieldset>
+			
+			
+			<fieldset class="col-md-12">
+				<div class="form-group">
+					<label>Tipo:</label>
+					<input class="form-control" type="text">
+				</div>
+			</fieldset>
+			<fieldset class="col-md-4">
+				<div class="form-group">
+					<label>Quantidade:</label>
+					<input class="form-control" type="text">
+				</div>
+			</fieldset>
+			<fieldset class="col-md-4">
+				<div class="form-group">
+					<label>Preço unitário:</label>
+					<input class="form-control" type="text">
+				</div>
+			</fieldset>
+			<fieldset class="col-md-4">
+				<div class="form-group">
+					<label>Preço total:</label>
+					<input class="form-control" type="text">
+				</div>
+			</fieldset>
+			
+			<button type="button" class="btn btn-primary col-md-offset-4 col-md-4" onclick="document.negociar.submit();">Enviar</button>
+		</form>
+	</div>
 	</div>
 	
 	<!-- inclusão do JS bootstrap -->

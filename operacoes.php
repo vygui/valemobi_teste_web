@@ -35,12 +35,9 @@
 		</div>
 	</nav>
 	
-	<div class="container videos">
-		<div class="row">
-			<h1>Negociar</h1>
-			
-		</div>
-	</div>
+	
+	
+	
 	
 	<!-- inclusão do JS bootstrap -->
 	<script src="js/bootstrap.min.js"></script>
