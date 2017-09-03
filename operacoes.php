@@ -1,4 +1,5 @@
 <?php
+	//cabeçalho PHP
 	header('Content-Type: text/html; charset=utf-8');
 	include 'conexao.php';
 	
