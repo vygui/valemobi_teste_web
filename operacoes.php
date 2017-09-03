@@ -1,3 +1,12 @@
+<?php
+	header('Content-Type: text/html; charset=utf-8');
+	include 'conexao.php';
+	
+	mysql_query("SET NAMES 'utf8'");
+	mysql_query('SET character_set_connection=utf8');
+	mysql_query('SET character_set_client=utf8');
+	mysql_query('SET character_set_results=utf8');
+?>
 <html lang="pt-br">
 <head>
 	<title>Negociar</title>
@@ -10,7 +19,7 @@
 	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 	<link rel="icon" href="img/short_icon.png" />
 	<link href="css/estilo_geral.css" rel="stylesheet" media="screen" />
-	<link href="css/estilo_home.css" rel="stylesheet" media="screen" />
+	<link href="css/estilo_operacoes.css" rel="stylesheet" media="screen" />
 </head>
 <body>
 	<!-- Superior -->
@@ -28,7 +37,7 @@
 			
 			<div class="collapse navbar-collapse" id="menu_navegacao">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#">Negociar</a></li>
+					<li><a href="negociar.php">Negociar</a></li>
 					<li><a href="#">Operações</a></li>
 				</ul>
 			</div>
@@ -39,8 +48,8 @@
 	<div class="container">
 	<div class="row">
 		<h1>Histórico de Operações</h1>
-		<div>
-			<p class="col-xs-2">id</p><p class="col-xs-offset-6 col-xs-2">Data:</p><p class="col-xs-2">Hora:</p>
+		<div class="operacao">
+			<p class="col-xs-2" id="id">id</p><p class="col-xs-offset-6 col-xs-2">Data:</p><p class="col-xs-2">Hora:</p>
 			<p class="col-xs-8">Cod - Mercadoria</p><p class="col-xs-2">Quantidade</p>
 			<p class="col-xs-8">Descrição:</p><p class="col-xs-2">Valor:</p>
 		</div>
