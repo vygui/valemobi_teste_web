@@ -7,6 +7,11 @@
 	mysql_query('SET character_set_connection=utf8');
 	mysql_query('SET character_set_client=utf8');
 	mysql_query('SET character_set_results=utf8');
+	
+	//busca de todas as operações cadastradas na 'tab_operacoes'
+	$sql = "SELECT * FROM tab_operacoes";
+	$operacoes = mysql_query($sql);
+	
 ?>
 <html lang="pt-br">
 <head>
@@ -24,7 +29,7 @@
 </head>
 <body>
 	<!-- Superior -->
-	<nav class="navbar navbar-inverse menu">
+	<nav class="navbar navbar-inverse menu_topo">
 		<div class="container">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu_navegacao">
@@ -33,7 +38,7 @@
 					<span class="icon-bar"></span>
 				</button>
 			
-				<a class="navbar-brand" href="#"><img alt="logo" src="#"  height="28" /></a>
+				<a class="navbar-brand" href="#"></a>
 			</div>
 			
 			<div class="collapse navbar-collapse" id="menu_navegacao">
@@ -49,11 +54,18 @@
 	<div class="container">
 	<div class="row">
 		<h1>Histórico de Operações</h1>
-		<div class="operacao">
-			<p class="col-xs-2" id="id">id</p><p class="col-xs-offset-6 col-xs-2">Data:</p><p class="col-xs-2">Hora:</p>
-			<p class="col-xs-8">Cod - Mercadoria</p><p class="col-xs-2">Quantidade</p>
-			<p class="col-xs-8">Descrição:</p><p class="col-xs-2">Valor:</p>
+		<?php
+			//exibição das operações
+			while ($operacao = mysql_fetch_array($operacoes)) {
+		?>
+		<div class="col-xs-12 operacao">
+			<p class="col-xs-2" id="id">ID: <?php echo $operacao['id']; ?></p><p class="col-xs-offset-6 col-xs-4"><?php if($operacao['tipo_negocio'] == 1) {echo 'Compra';} else {echo 'Venda';} ?></p>
+			<p class="col-xs-8"><?php echo $operacao['codigo_mercadoria']; ?> - <?php echo $operacao['nome_mercadoria']; ?></p><p class="col-xs-4">Qtd: <?php echo $operacao['quantidade']; ?></p>
+			<p class="col-xs-8"><?php echo $operacao['tipo_mercadoria']; ?></p><p class="col-xs-4">Valor Total: R$ <?php echo $operacao['preco']; ?></p>
 		</div>
+		<?php
+			}
+		?>
 	</div>
 	</div>
 	

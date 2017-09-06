@@ -22,12 +22,11 @@
 	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 	<link rel="icon" href="img/short_icon.png" />
 	<link href="css/estilo_geral.css" rel="stylesheet" media="screen" />
-	<!-- o Jquery das mascaras -->
-	<script src="js/jquery/jquery.mask.min.js"></script>
+	<link href="css/estilo_negociar.css" rel="stylesheet" media="screen" />	
 </head>
 <body>
 	<!-- Superior -->
-	<nav class="navbar navbar-inverse menu">
+	<nav class="navbar navbar-inverse menu_topo">
 		<div class="container">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu_navegacao">
@@ -36,7 +35,7 @@
 					<span class="icon-bar"></span>
 				</button>
 			
-				<a class="navbar-brand" href="#"><img alt="logo" src="#"  height="28" /></a>
+				<a class="navbar-brand" href="#"></a>
 			</div>
 			
 			<div class="collapse navbar-collapse" id="menu_navegacao">
@@ -52,7 +51,11 @@
 	<div class="row">
 		<h1>Negociar</h1>
 		
-		<form name="negociar" action="gravar_op.php" method="POST">
+		<div class="col-md-12" id="contato_enviado">
+			<p id="mensagem_contato">Mensagem enviada com sucesso!</p>
+		</div>
+		
+		<form name="negociar" id="negociar" action="gravar_op.php" method="POST">
 			<fieldset class="col-xs-12">
 				<div class="form-group">
 					<label>Tipo de Operação:</label>
@@ -67,7 +70,7 @@
 			<fieldset class="col-md-2">
 				<div class="form-group">
 					<label>Código:</label>
-					<input class="form-control" type="text" name="codigo" />
+					<input class="form-control codigo" type="text" id="codigo" name="codigo" />
 				</div>
 			</fieldset>
 			<fieldset class="col-md-10">
@@ -87,24 +90,21 @@
 			<fieldset class="col-md-4">
 				<div class="form-group">
 					<label>Quantidade:</label>
-					<input class="form-control" type="text" name="quantidade" />
+					<input class="form-control" type="text" id="quantidade" name="quantidade" />
 				</div>
 			</fieldset>
-			<fieldset class="col-md-4">
-				<div class="form-group">
-					<label>Preço unitário:</label>
-					<input class="form-control preco" type="text" name="preco_unitario" />
-				</div>
-			</fieldset>
-			<fieldset class="col-md-4">
+			
+			<fieldset class="col-md-4 col-md-offset-4 col-md-4">
 				<div class="form-group">
 					<label>Preço total:</label>
 					<input class="form-control preco" type="text" name="preco_total" />
 				</div>
 			</fieldset>
 			
-			<button type="button" class="btn btn-primary col-md-offset-4 col-md-4" onclick="document.negociar.submit();">Enviar</button>
+			<button type="submit" id="bt_enviar" class="btn btn-primary col-md-offset-4 col-md-4">Gravar</button>
 		</form>
+		
+		
 	</div>
 	</div>
 	
@@ -112,12 +112,16 @@
 	
 	<!-- inclusão do JS bootstrap -->
 	<script src="js/bootstrap.min.js"></script>
-	<script src="js/main.js"></script>
+	<!-- inclusão outros JS -->
+	<script src="js/jquery/jquery.mask.min.js"></script>
+	<script src="js/app.js"></script>
+	
+	<!-- Configuração das máscaras -->
 	<script>
 		$(document).ready(function(){
 			$('.preco').mask('000.000.000.000.000,00', {reverse: true});
+			$('.codigo').mask('0000', {reverse: true});
 		});
-	
 	</script>
 </body>
 </html>

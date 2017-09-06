@@ -7,5 +7,9 @@ h1 {
 	margin-bottom: 1em;
 }
 
-/* operacoes.php */
+.menu_topo {
+	border-radius: 0px;
+	border: none;
+}
+
 

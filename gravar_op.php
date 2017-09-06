@@ -18,13 +18,10 @@
 	//especificação enviada -> trabalhar apenas com um preco -> preco_total
 	$preco_total = $_POST['preco_total'];
 	//formatacao do preco
-	//$preco_total = floatval($preco_total);
-	//echo $preco_total;
-	//$preco_total = number_format($preco_total, 2, '.', ',');
-	//echo $preco_total;
+	//para recuperar os valores sera utilizado ex: 'number_format($preco_total, 2, '.', ',')'
 	
 	//inclusao dos dados na tabela 'tab_operacoes'
 	$sql = "INSERT INTO tab_operacoes (codigo_mercadoria, nome_mercadoria, tipo_mercadoria, quantidade, preco, tipo_negocio) VALUES ('$codigo_pd', '$nome_pd', '$tipo_pd', '$quantidade_pd', '$preco_total', '$tipo_op')";
-	mysql_query($sql) or die (mysql_error());
+	@mysql_query($sql);
 	
 ?>

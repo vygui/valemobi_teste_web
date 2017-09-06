@@ -3,4 +3,10 @@
 	color: #999;
 }
 
+.operacao {
+	margin-bottom: 1.2em;
+	border: 1px solid #777;
+	padding-top: 0.9em;
+	padding-bottom: 0.3em;
+}
 

@@ -1,0 +1,15 @@
+#contato_enviado {
+	display: none;
+}
+
+.erro {
+	color: red;
+}
+
+.sucesso {
+	color: green;
+}
+
+#bt_enviar {
+	margin-top: 2.5em;
+}
